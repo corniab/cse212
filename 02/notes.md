@@ -52,6 +52,23 @@ for i in range(0, n):
 		print(i, j)
 ```
 
+## Performance
+
+| Function             | Performance |
+| :------------------- | :---------: |
+| lookup(index)        |    O(1)     |
+| append(value)        |    O(1)     |
+| insert(index, value) |    O(n)     |
+| remove(value)        |    O(n)     |
+| size()               |    O(1)     |
+| capacity()           |    O(1)     |
+| empty()              |    O(1)     |
+
+## Measure Actual Execution Time
+
+- use the 'timeit' module.
+- use a counter to count how much work is being performed.
+
 ## Key Terms
 
 1. algorithm: a solution to a problem including the steps to solve the problem. An algorithm is implemented as one or more functions in code.
