@@ -1,10 +1,33 @@
 # Week 03 Notes
 
+> It is not easy to convey, unless one has experienced it, the dramatic feeling of sudden enlightenment that floods the mind when the right idea finally clicks into place. One immediately sees how many previously puzzling facts are neatly explained by the new hypothesis. One could kick oneself for not having the idea earlier, it now seems so obvious. Yet before, everything was in a fog.”
+> ― Francis Crick, What Mad Pursuit[^1]
+
+[]
+
 ## Stacks
 
 Stacks are really good for "remembering" where we have been. They maintain a history of the current execution context. You could use a stack to undo commands that you have performed.
 
 Debuggers also use stacks to trace the current execution context.
+
+```python
+# An example of a simple stack.
+stack = []
+
+stack.append('item1')
+stack.append('item2')
+print(stack)
+# expected output: ['item1', 'item2']
+
+stack.pop()
+print(stack)
+# expected output: ['item1']
+
+stack.pop()
+print(stack)
+# expected output: []
+```
 
 ## Code Reviews
 
