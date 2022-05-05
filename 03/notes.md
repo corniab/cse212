@@ -3,8 +3,6 @@
 > It is not easy to convey, unless one has experienced it, the dramatic feeling of sudden enlightenment that floods the mind when the right idea finally clicks into place. One immediately sees how many previously puzzling facts are neatly explained by the new hypothesis. One could kick oneself for not having the idea earlier, it now seems so obvious. Yet before, everything was in a fog.”
 > ― Francis Crick, What Mad Pursuit[^1]
 
-[]
-
 ## Stacks
 
 Stacks are really good for "remembering" where we have been. They maintain a history of the current execution context. You could use a stack to undo commands that you have performed.
@@ -56,3 +54,7 @@ I start a code review by forming a hypothesis of what I think the code should be
 - stack: a data structure that follows a last in, first out rule. the stack is used to reverse data or remember previous data including previous results
 - structure chart: a diagram showing which functions call which functions. Frequently, the arrows used to show function calls also include parameters that are passed between the functions
 - UML: Unified Modeling Language. A formal modelling language to represent object-oriented designs. UML includes many types of diagrams including class diagrams, activity diagrams, and state diagrams.
+
+### Footnotes
+
+[^1]: [goodreads](https://www.goodreads.com/quotes/tag/hypothesis)
