@@ -43,6 +43,44 @@ I start a code review by forming a hypothesis of what I think the code should be
 - execute the code manually on paper
 - analyze the use of data structures
 
+### Teach Assignment
+
+This week's team assignment[^2], proved very difficult for me. Partially, because I was feeling rushed and partially because there were new techniques. Let me explain.
+
+```python
+def do_something_complicated(line):
+	stack = []
+	for item in line:
+		if item == '(' or item == '[' or item == '{':
+			stack.append(item)
+		elif item == ')':
+			if len(stack) == 0 or stack.pop() != '(':
+				return False
+		elif item == ']':
+			if len(stack) == 0 or stack.pop() != '[':
+				return False
+		elif item == '}':
+			if len(stack) == 0 or stack.pop() != '{':
+				return False
+	return len(stack) == 0
+```
+
+What threw me off is the 'stack.pop()' in the if statements. It didn't make sense to me to remove the item until after the statement was evaluated. It also didn't make sense to me what order everything was being removed. This is how it works.
+
+```python
+# Add all opening brackets to the stack
+# Ignore all other characters
+# If we encounter a closing bracket
+# And the stack is empty then return false
+# Or remove the last value of the stack
+# And if it is not a matching bracket to the removed value
+# Then return False
+# If all of our brackets have a pair then the stack should be 0 in size then return True
+# If the stack is not empty then there are missing matches and we will return False
+```
+
+On a high level, the function returns true if there is a matching pair of brackets. It returns false otherwise. It is actually a really clever algorithm.
+
 ## Definitions
 
 - back: refers to the location in a stack where a push and pop occurs. The last item put into the stack is found in the back.
@@ -58,3 +96,4 @@ I start a code review by forming a hypothesis of what I think the code should be
 ### Footnotes
 
 [^1]: [goodreads](https://www.goodreads.com/quotes/tag/hypothesis)
+[^2]: [teach assignment](https://byui-cse.github.io/cse212-course/lesson03/03-teach.html)
