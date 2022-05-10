@@ -30,7 +30,7 @@ print(web_server_queue.dequeue())
 print(web_server_queue.dequeue())
 ```
 
-Use assertions to build test cases
+Use assertions to build test cases.
 
 ```python
 def is_leap_year(year: int):
@@ -42,7 +42,6 @@ def is_leap_year(year: int):
 		return True
 	else:
 		return False
-
 
 assert is_leap_year(1996) == True
 assert is_leap_year(1900) == False
