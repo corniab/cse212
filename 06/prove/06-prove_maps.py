@@ -326,8 +326,12 @@ def earthquake_daily_summary():
     req = requests.get("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson")
     data = req.json() # The .json() function will convert the json data from the server to a dictionary
 
-    # ADD YOUR CODE HERE
+    features = data["features"]
+    for feature in features:
+        place = feature["properties"]["place"]
+        mag = feature["properties"]["mag"]
 
+        print(f"{place} - Mag {mag}")
 # Sample Test Cases (may not be comprehensive) 
 print("\n=========== PROBLEM 5 TESTS ===========")
 earthquake_daily_summary()
