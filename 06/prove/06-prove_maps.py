@@ -89,7 +89,7 @@ def summarize_degrees(filename):
 
 # Sample Test Cases (may not be comprehensive) 
 print("\n=========== PROBLEM 2 TESTS ===========")
-pprint(summarize_degrees("06\prove\census.txt")) # You might need to add a path for the file
+pprint(summarize_degrees("census.txt")) # You might need to add a path for the file
 # Results may be in a different order:
 # {'Bachelors': 5355, 'HS-grad': 10501, '11th': 1175, 
 # 'Masters': 1723, '9th': 514, 'Some-college': 7291, 
