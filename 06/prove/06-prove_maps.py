@@ -7,8 +7,6 @@ It is a violation of BYU-Idaho Honor Code to post or share this code with others
 to post it online.  Storage into a personal and private repository (e.g. private
 GitHub repository, unshared Google Drive folder) is acceptable.
 """
-from pprint import pprint
-
 #############
 # Problem 1 #
 #############
@@ -89,7 +87,7 @@ def summarize_degrees(filename):
 
 # Sample Test Cases (may not be comprehensive) 
 print("\n=========== PROBLEM 2 TESTS ===========")
-pprint(summarize_degrees("census.txt")) # You might need to add a path for the file
+print(summarize_degrees("census.txt")) # You might need to add a path for the file
 # Results may be in a different order:
 # {'Bachelors': 5355, 'HS-grad': 10501, '11th': 1175, 
 # 'Masters': 1723, '9th': 514, 'Some-college': 7291, 
