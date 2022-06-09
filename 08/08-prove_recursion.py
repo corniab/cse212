@@ -222,13 +222,13 @@ def wildcard_binary(pattern):
     some of the Python str functions like find 
     and replace to be useful in solving this problem.
     """
+    # Base Case
     if pattern.find("*") == -1:
         print(pattern)
 
     else:
-        for bit in [0,1]:
-            pattern = pattern.replace("*", bit)
-            wildcard_binary(pattern)
+        for bit in list("01"):            
+            wildcard_binary(pattern.replace("*", bit, 1))
 
 # Sample Test Cases (may not be comprehensive) 
 print("\n=========== PROBLEM 4 TESTS ===========")
