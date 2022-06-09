@@ -302,7 +302,7 @@ def is_valid_move(maze, curr_path, x, y):
     if maze[y][x] == 0:
         return False
     # Can't go if we have already been there (don't go in circles)
-    if (x,y) in curr_path:
+    if (y,x) in curr_path:
         return False
     # Otherwise, we are good
     return True
@@ -312,18 +312,32 @@ def solve_maze(maze, x=0, y=0, curr_path=None):
     Use recursion to print all paths that start at (0,0) and end at the
     'end' square.
     """
-
+    # dirs = ((current), (up), (left), (right), (down))
+    dirs = ((0,0), (-1, 0), (0, -1), (0, 1), (1, 0))
     # If this is the first time running the function, then we need
     # to initialize the curr_path list.
     if curr_path is None:
         curr_path = []
 
-    # ADD CODE HERE    
-
+    # Base Case
+    if is_end_maze(maze, x, y):
+        print(curr_path)
+    else:
+        for (move_y, move_x) in dirs:
+            pos_x = x + move_x
+            pos_y = y + move_y
+            if is_valid_move(maze, curr_path, pos_x, pos_y):
+                curr_path.append((pos_y, pos_x))
+                solve_maze(maze, pos_x, pos_y, curr_path)
+        
 
 # Sample Test Cases (may not be comprehensive) 
 print("\n=========== PROBLEM 5 TESTS ===========")
-small_maze = [[1,1,1],[1,0,1],[1,1,2]]
+small_maze = [
+    [1,1,1],
+    [1,0,1],
+    [1,1,2]
+]
 solve_maze(small_maze)
 """
 Two Solutions (order in each solution should match):
@@ -331,7 +345,8 @@ Two Solutions (order in each solution should match):
 [(0, 0), (1, 0), (2, 0), (2, 1), (2, 2)]
 """
 
-big_maze = [[1,0,1,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0],
+big_maze = [
+[1,0,1,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0],
 [1,1,1,1,0,1,0,0,0,0,1,0,1,1,1,1,1,1,1,1],
 [1,0,0,0,0,1,0,0,0,0,1,0,1,0,0,1,0,1,0,1],
 [1,1,1,1,0,1,1,1,1,0,1,0,1,0,0,1,0,1,0,1],
