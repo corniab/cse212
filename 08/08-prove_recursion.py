@@ -316,31 +316,39 @@ def solve_maze(maze, x=0, y=0, curr_path=None):
     # If this is the first time running the function, then we need
     # to initialize the curr_path list.
     if curr_path is None:
+        # We need to know where we are starting.
+        # In this case at (0,0)
         curr_path = [(0,0)]
 
     # Base Case
     if is_end_maze(maze, x, y):
         print(curr_path)
+        curr_path.pop()
+        return
+    else:
 
-    # Create directions: (y, x)
-    NORTH = (-1,0)
-    EAST = (0,1)
-    SOUTH = (1,0)
-    WEST = (0,-1)
-    dirs = [NORTH, EAST, SOUTH, WEST]
+        # Create directions: (y, x)
+        NORTH = (-1,0)
+        EAST = (0,1)
+        SOUTH = (1,0)
+        WEST = (0,-1)
+        dirs = [NORTH, EAST, SOUTH, WEST]
 
-    for (move_y, move_x) in dirs:
-        # Test each possible move in current position.
-        pos_y = y + move_y
-        pos_x = x + move_x
-        if is_valid_move(maze, curr_path, pos_x, pos_y):
-            # Add move to curr_path
-            curr_path.append((pos_y, pos_x))
+        for (move_y, move_x) in dirs:
+            # Test each possible move from current position.
+            pos_y = y + move_y
+            pos_x = x + move_x
+            if is_valid_move(maze, curr_path, pos_x, pos_y):
+                # Add updated position to current path.
+                curr_path.append((pos_y, pos_x))
 
-            # Move to new position by recursively calling solve_maze
-            solve_maze(maze, pos_x, pos_y, curr_path)
-    # Backtrack curr_path once end of maze is reached
-    curr_path.pop()
+                # Move to new position by recursively calling solve_maze
+                # We will explore every possible direction at each square until
+                # we have exhausted each option.
+                # If a viable path is found then we print it.
+                solve_maze(maze, pos_x, pos_y, curr_path)
+        # Backtrack curr_path once we have tried each direction
+        curr_path.pop()
         
 
 # Sample Test Cases (may not be comprehensive) 
