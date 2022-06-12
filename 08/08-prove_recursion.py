@@ -227,6 +227,7 @@ def wildcard_binary(pattern):
         print(pattern)
 
     else:
+        # Replace each wildcard one at a time for each premutation.
         for bit in list("01"):            
             wildcard_binary(pattern.replace("*", bit, 1))
 
