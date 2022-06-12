@@ -302,7 +302,7 @@ def is_valid_move(maze, curr_path, x, y):
     if maze[y][x] == 0:
         return False
     # Can't go if we have already been there (don't go in circles)
-    if (y,x) in curr_path:
+    if (x,y) in curr_path:
         return False
     # Otherwise, we are good
     return True
@@ -323,32 +323,30 @@ def solve_maze(maze, x=0, y=0, curr_path=None):
     # Base Case
     if is_end_maze(maze, x, y):
         print(curr_path)
-        curr_path.pop()
-        return
     else:
 
-        # Create directions: (y, x)
-        NORTH = (-1,0)
-        EAST = (0,1)
-        SOUTH = (1,0)
-        WEST = (0,-1)
+        # Create directions: (x,y)
+        NORTH = (0,-1)
+        EAST = (1,0)
+        SOUTH = (0,1)
+        WEST = (-1,0)
         dirs = [NORTH, EAST, SOUTH, WEST]
 
-        for (move_y, move_x) in dirs:
+        for (move_x, move_y) in dirs:
             # Test each possible move from current position.
-            pos_y = y + move_y
             pos_x = x + move_x
+            pos_y = y + move_y
             if is_valid_move(maze, curr_path, pos_x, pos_y):
                 # Add updated position to current path.
-                curr_path.append((pos_y, pos_x))
+                curr_path.append((pos_x, pos_y))
 
                 # Move to new position by recursively calling solve_maze
                 # We will explore every possible direction at each square until
                 # we have exhausted each option.
                 # If a viable path is found then we print it.
                 solve_maze(maze, pos_x, pos_y, curr_path)
-        # Backtrack curr_path once we have tried each direction
-        curr_path.pop()
+    # Backtrack curr_path once we have tried each direction
+    curr_path.pop()
         
 
 # Sample Test Cases (may not be comprehensive) 
