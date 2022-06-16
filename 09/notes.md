@@ -8,6 +8,20 @@ Structured by level 0..n
 
 Binary Search Trees have faster lookups than arrays or linked lists. They are great for storing sorted data.
 
+## Scenarios for deletion
+
+1. Delete node with no child
+2. Delete node with one child
+3. Delete node with two children
+   - requires you to rebalance tree.
+   - find minimum node in left subtree and copy it and remove duplicates
+   - or find maximum value in right subtree and copy and remove duplicates
+
+## Resources
+
+- [Binary Tree Part 1](https://youtu.be/lFq5mYUWEBk)
+- [Binary Tree Part 2](https://youtu.be/JnrbMQyGLiU)
+
 ## Common Operations
 
 | Operation        | Description                                                                                      | Performance |
