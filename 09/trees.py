@@ -23,14 +23,10 @@ class TreeNode:
         if len(self.children) < 1:
             return str_val
         for child in self.children:
-            indent = " " * self.get_level(child) * 4
+            indent =  " " * self.get_level(child) * 4 + "|__"
             line = "\n" + indent + str(child.data)
             str_val += child.__str__(line)
-        return str_val 
-
-        
-
-        
+        return str_val        
 
     @staticmethod
     def build_tree():
