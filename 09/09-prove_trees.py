@@ -239,7 +239,22 @@ class BST:
         This function intended to be called the first time by 
         get_height.
         """
-        pass
+        if node is not None:
+            # search left and right and compare value
+            left_height = 1 + self._get_height(node.left)
+            right_height = 1 + self._get_height(node.right)
+
+            # Return height of left subtree if its value
+            # is greater than or equal to the height of the right subtree
+            if left_height >= right_height:
+                return left_height
+            else:
+                return right_height        
+        else:
+            # Return 0 if we reach a leaf.
+            return 0
+            
+            
 
     #################
     # End Problem 4 #
@@ -266,7 +281,7 @@ def create_bst_from_sorted_list(sorted_list):
 ###################
 # Start Problem 5 #
 ###################
-def _insert_middle(sorted_list, first, last, bst):
+def _insert_middle(sorted_list, first, last, bst: BST):
     """
     This function will attempt to insert the item in the middle
     of 'sorted_list' into the 'bst' tree.  The middle is 
@@ -294,7 +309,21 @@ def _insert_middle(sorted_list, first, last, bst):
     using list slicing to create sublists to solve this problem.
 
     """
-    pass
+    # Base Case
+    if first > last:
+        return
+
+    # Find the middle index
+    mid = (first + last)//2
+
+    # Insert the middle index into tree
+    bst.insert(sorted_list[mid])
+
+    # Insert in the left subtree
+    _insert_middle(sorted_list, first, last = mid-1, bst=bst)
+
+    # Insert in the right subtree
+    _insert_middle(sorted_list, first=mid+1, last=last, bst=bst)
 
 #################
 # End Problem 5 #
