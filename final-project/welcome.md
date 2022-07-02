@@ -6,9 +6,9 @@ In this tutorial, I will cover three data structures: Stacks[^1], Linked Lists[^
 If this is your first time reading about data structures then do not fear. A data structure is simply a way of organizing data so that it can be used efficiently[^4]. While this tutorial covers only three data structures, there are many more[^5]. Enjoy!
 ## Outline
 
-### [Stacks]()
-### [Linked Lists]()
-### [Trees](final-project\trees\trees.md) 
+### [Stacks](stacks/stacks.md)
+### [Linked Lists](linkLists/linkedLists.md)
+### [Trees](trees/trees.md) 
 
 ## Contact
 You can contact me at bencornia@byui.edu
