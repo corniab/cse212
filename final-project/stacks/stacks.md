@@ -1,4 +1,4 @@
-# Stacks
+# Stack
 
 ## Usage
 
@@ -10,7 +10,7 @@
 ````python
 
 ````
-You can find the solution [here]().
+You can find the solution [here](solution.py).
 ### Footnotes
 [^1]: []()
 [^2]: []()
