@@ -7,7 +7,7 @@ If this is your first time reading about data structures then do not fear. A dat
 ## Outline
 
 ### [Stacks](./stacks/stacks.md)
-### [Linked Lists](./linkedLists/linkedLists.md)
+### [Linked Lists](https://github.com/corniab/cse212/blob/main/final-project/linkedLists/linkedlists.md)
 ### [Trees](./trees/trees.md) 
 
 ## Contact
