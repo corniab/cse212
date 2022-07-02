@@ -7,7 +7,7 @@ If this is your first time reading about data structures then do not fear. A dat
 ## Outline
 
 ### [Stacks](stacks/stacks.md)
-### [Linked Lists](linkLists/linkedLists.md)
+### [Linked Lists](linkedLists/linkedLists.md)
 ### [Trees](trees/trees.md) 
 
 ## Contact
