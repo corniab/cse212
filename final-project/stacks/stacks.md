@@ -88,9 +88,31 @@ class Stack(list):
         return False
 ```
 
+We will create a small repl that allows the user to undo what they have typed.
+
+````python
+
+prompt = ""
+stack = Stack()
+print("Welcome to the REPL")
+print("Type 'exit' to quit.")
+print("Type 'undo' to undo previous command.")
+while prompt != "exit":
+    prompt = input("Type a command: ")
+    if prompt == "undo":
+        stack.pop()
+        print(stack)
+        continue
+    stack.push(prompt)
+    print(stack)
+
+```
+
 ## Practice Problem
 
-We will use the two stacks to create a simple web browser.
+We will use two stacks to create a simple web browser.
+One stack will store the pages that have been previously visited.
+The second will store the pages that
 
 ```python
 from stack import Stack
@@ -105,7 +127,10 @@ class Web_Browser():
         print(self.current_page)
 
     def visit_page(self, url):
-        """Prints the url and adds it to the visited stack."""
+        """
+        Prints the url and adds it to the visited stack.
+        Represents the address bar in the browser.
+        """
         # Clear the forward stack
         self.forward.clear()
 
@@ -117,7 +142,10 @@ class Web_Browser():
         print(self.current_page)
 
     def go_back(self):
-        """Prints the previous page url."""
+        """
+        Prints the previous page url.
+        Represents the back button in the browser.
+        """
         # Check if visited stack is not empty
         if self.visited.empty:
             print("Can't go back.")
@@ -130,8 +158,17 @@ class Web_Browser():
 
             print(self.current_page)
 
+    ###################
+    #    PROBLEM 1    #
+    ###################
+    # Complete the code for the go_forward function.
     def go_forward(self):
-      """Prints the nex page url."""
+      """
+      Prints the next page url.
+      Represents the forward button in the browser.
+      """
+
+
 
 browser = Web_Browser()
 
@@ -166,3 +203,4 @@ You can find the solution [here](solution.py).
 [^3]: Alice Matthews, [The stack data structure — What is it and how is it used in JavaScript?](https://levelup.gitconnected.com/the-stack-data-structure-what-is-it-and-how-is-it-used-in-javascript-23562fb8a590)
 [^4]: []()
 [^5]: []()
+````

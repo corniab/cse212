@@ -45,3 +45,19 @@ class Stack(list):
         if self._size < 1:
             return True
         return False
+
+# We will create a small repl that allows the user to undo what they have typed
+prompt = ""
+stack = Stack()
+print("Welcome to the REPL")
+print("Type 'exit' to quit.")
+print("Type 'undo' to undo previous command.")
+while prompt != "exit":
+    prompt = input("Type a command: ")
+    if prompt == "undo":
+        stack.pop()
+        print(stack)
+        continue
+    stack.push(prompt)
+    print(stack)
+
