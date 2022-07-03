@@ -46,7 +46,14 @@ Operations in stacks are very efficient because we are only adding and removing 
 
 ## Example
 
+Here is an implementation of a stack.
+
 ```python
+"""
+We will create a stack by inheriting from python's built in list.
+In addition we will add methods to push and pop.
+And we will use the @property decorator to create a getter for empty.
+"""
 """
 We will create a stack by inheriting from python's built in list.
 In addition we will add methods to push and pop.
@@ -69,6 +76,9 @@ class Stack(list):
     def pop(self):
         """Removes and returns last value of stack."""
         if not self.empty:
+            # Decrement the size of the stack.
+            self._size -= 1
+
             # Return the return value of the super class method pop.
             return super().pop()
 
@@ -81,9 +91,9 @@ class Stack(list):
         if self._size < 1:
             return True
         return False
-
-
 ```
+
+We will use the stack to create a simple calculator.
 
 ## Practice Problem
 
