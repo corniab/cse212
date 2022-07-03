@@ -54,11 +54,6 @@ We will create a stack by inheriting from python's built in list.
 In addition we will add methods to push and pop.
 And we will use the @property decorator to create a getter for empty.
 """
-"""
-We will create a stack by inheriting from python's built in list.
-In addition we will add methods to push and pop.
-And we will use the @property decorator to create a getter for empty.
-"""
 class Stack(list):
     def __init__(self):
         # Call the super class constructor.
@@ -93,11 +88,72 @@ class Stack(list):
         return False
 ```
 
-We will use the stack to create a simple calculator.
-
 ## Practice Problem
 
+We will use the two stacks to create a simple web browser.
+
 ```python
+from stack import Stack
+
+class Web_Browser():
+    """Class to represent a web browser"""
+    def __init__(self) -> None:
+        self.current_page = "Home Page"
+        self.visited = Stack()
+        self.forward = Stack()
+
+        print(self.current_page)
+
+    def visit_page(self, url):
+        """Prints the url and adds it to the visited stack."""
+        # Clear the forward stack
+        self.forward.clear()
+
+        # Add the current page to the visited stack.
+        self.visited.push(self.current_page)
+
+        # Update the current page.
+        self.current_page = url
+        print(self.current_page)
+
+    def go_back(self):
+        """Prints the previous page url."""
+        # Check if visited stack is not empty
+        if self.visited.empty:
+            print("Can't go back.")
+        else:
+            # Add the current page to the forward stack.
+            self.forward.push(self.current_page)
+
+            # Update the current page
+            self.current_page = self.visited.pop()
+
+            print(self.current_page)
+
+    def go_forward(self):
+      """Prints the nex page url."""
+
+browser = Web_Browser()
+
+print("Visit some pages")
+browser.visit_page("google.com")
+browser.visit_page("lds.org")
+browser.visit_page("youtube.com")
+
+print()
+print("Go back to home page")
+browser.go_back()
+browser.go_back()
+browser.go_back()
+
+print()
+print("Go Forward several pages")
+browser.go_forward()
+browser.go_forward()
+
+print("Visit a new page")
+browser.visit_page("reddit.com")
+browser.go_forward()
 
 ```
 
@@ -105,7 +161,7 @@ You can find the solution [here](solution.py).
 
 ### Footnotes
 
-[^1]: Photo by Christopher Flaten: [https://www.pexels.com/photo/a-pile-of-gray-plates-5514789/]
+[^1]: Photo by (Christopher Flaten)[https://www.pexels.com/photo/a-pile-of-gray-plates-5514789/]
 [^2]: Last In First Out, [Geeks for Geeks](https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming/)
 [^3]: Alice Matthews, [The stack data structure — What is it and how is it used in JavaScript?](https://levelup.gitconnected.com/the-stack-data-structure-what-is-it-and-how-is-it-used-in-javascript-23562fb8a590)
 [^4]: []()
