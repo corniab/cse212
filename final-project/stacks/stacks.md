@@ -90,7 +90,7 @@ class Stack(list):
 
 We will create a small repl that allows the user to undo what they have typed.
 
-````python
+`````python
 
 prompt = ""
 stack = Stack()
@@ -114,7 +114,7 @@ We will use two stacks to create a simple web browser.
 One stack will store the pages that have been previously visited.
 The second will store the pages that
 
-```python
+````python
 from stack import Stack
 
 class Web_Browser():
@@ -192,7 +192,7 @@ print("Visit a new page")
 browser.visit_page("reddit.com")
 browser.go_forward()
 
-```
+`````
 
 You can find the solution [here](solution.py).
 
@@ -203,4 +203,7 @@ You can find the solution [here](solution.py).
 [^3]: Alice Matthews, [The stack data structure — What is it and how is it used in JavaScript?](https://levelup.gitconnected.com/the-stack-data-structure-what-is-it-and-how-is-it-used-in-javascript-23562fb8a590)
 [^4]: []()
 [^5]: []()
-````
+
+```
+
+```
