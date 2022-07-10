@@ -47,7 +47,8 @@ class LinkedList:
         # Create a new node.
         node = LinkedList.Node(value)
 
-        # If the list is empty then assign head and tail to node.
+        # If the list is empty 
+        # then assign head and tail to node.
         if self.tail is None:
             self.head = node
             self.tail = node
@@ -57,13 +58,13 @@ class LinkedList:
             self.tail.next = node
             self.tail = node          
 
-        # Increment the size
+        # Increment the size.
         self.__size += 1
 
     def remove_head(self):
         """Deletes the first node."""
         # If the list is empty or has 1 item
-        # The set the head and tail to None. 
+        # then set the head and tail to None. 
         if self.head == self.tail:
             self.head = None
             self.tail = None
@@ -79,7 +80,7 @@ class LinkedList:
     def remove_tail(self):
         """Removes the last node."""
         # If the list is empty or has 1 item
-        # The set the head and tail to None.
+        # then set the head and tail to None.
         if self.head == self.tail:
             self.head = None
             self.tail = None
@@ -126,16 +127,19 @@ class LinkedList:
         self.__size += 1
 
     def delete(self, index):
-        """Deletes node at specified index."""
+        """
+        Deletes node at specified index.
+        Index is 0 based.
+        """
         # Raise exception if index out of range.
         if index < 0 or index > self.__size:            
             raise IndexError(f"{index} is out of range.")
 
-        # If index is 0 then delete at head
+        # If index is 0 then delete head.
         if index == 0:
             self.remove_head()
             return
-        # If index is equal to size then delete at tail
+        # If index is equal to size then delete tail.
         elif index == self.__size-1:
             self.remove_tail()
             return
@@ -151,19 +155,18 @@ class LinkedList:
         curr.next.prev = curr.prev
 
         # Decrement the size.
-        self.__size -= 1
+        if self.__size > 0:
+            self.__size -= 1
 
     def __iter__(self):
         """Iterate foward through the Linked List."""
-        curr = self.head  # Start at the begining since this is a forward iteration.
+        curr = self.head 
         while curr is not None:
-            yield curr.data  # Provide (yield) each item to the user
-            curr = curr.next # Go forward in the linked list
+            yield curr.data  
+            curr = curr.next 
 
     def __str__(self):
-        """
-        Return a string representation of the linked list.
-        """
+        """Return a string representation of the linked list."""
         output = "linkedlist["
         first = True
         for value in self:
@@ -177,11 +180,4 @@ class LinkedList:
 
 
 linkedList = LinkedList()
-
-linkedList.insert_tail(0)
-linkedList.insert_tail(1)
-linkedList.insert_tail(2)
-linkedList.insert_tail(3)
-linkedList.insert_tail(4)
-linkedList.insert_tail(5)
 
