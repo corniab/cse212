@@ -124,8 +124,6 @@ while prompt != ".q":
 ## Practice Problem
 
 ```python
-## Practice Problem
-
 We will use two stacks to create a simple web browser.
 One stack will store the pages that have been previously visited.
 The second will store the pages that

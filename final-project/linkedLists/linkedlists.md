@@ -44,6 +44,10 @@ Linked lists are dynamic, or flexible in nature. They allow for easy insertion a
 
 ## Example
 
+```python
+
+```
+
 ## Practice Problem
 
 ```python
