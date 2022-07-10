@@ -17,17 +17,30 @@ A doubly linked list contains a reference to the node before and after it. This 
 
 ![doubly linked list](../resources/doubly-linked.jpg)
 
-To insert a node into the middle of a linked list we just update the pointers (references) to the appropriate nodes.
+To insert a node into the middle of a linked list we just update the pointers (references) to the appropriate nodes. If we are inserting at the head or tail — then we just update the respective pointer.
 
 ![inserting a node into a linked list](../resources/insert-linked.jpg)
 
-Deleting a node from the middle is similar in fashion to inserting. We just update the pointers and the remove the reference from the node.
+Deleting a node from the middle is similar in fashion to inserting. We just update the pointers and the remove the reference from the node. If we are deleting the head or tail — then we just update the respective pointer.
 
 ![deleting a node from a linked list](../resources/delete-linked.jpg)
 
 ## Usage
 
-## Time Complexity
+Linked lists are dynamic, or flexible in nature. They allow for easy insertion and deletion of nodes[^4] especially at the head and tail. Unlike static arrays, memory does not have to be reallocated if you go over a certain number of nodes. The greatest disadvantage is that it takes O(n) time to traverse a linked list. So operations that take place in the middle of the list can be expensive.
+
+## Time Complexity[^5]
+
+|     Operation      | Description                                        | Time Complexity |
+| :----------------: | :------------------------------------------------- | :-------------: |
+| insert_head(value) | Inserts value before the head.                     |      O(1)       |
+| insert_tail(value) | Inserts value before the head.                     |      O(1)       |
+|  insert(i, value)  | Inserts value after position i                     |      O(n)       |
+|   remove_head()    | Removes the head                                   |      O(1)       |
+|   remove_tail()    | Removes the tail                                   |      O(1)       |
+|     remove(i)      | Removes node i                                     |      O(n)       |
+|       size()       | Returns the size of the linked list.               |      O(1)       |
+|      empty()       | Returns true if the length of the linked list is 0 |      O(1)       |
 
 ## Example
 
@@ -44,5 +57,5 @@ You can find the solution [here](solution.py).
 [^1]: (Brainy Quote)[https://www.brainyquote.com/quotes/herbert_a_simon_193212]
 [^2]: How do you explain linked lists in layman's terms?, (Quora)[https://qr.ae/pvPxqO]
 [^3]: Linked List, (Wikipedia)[https://en.wikipedia.org/wiki/Linked_list]
-[^4]: ()[]
-[^5]: ()[]
+[^4]: Under what circumstances are linked lists useful?, (Stack OverFlow)[https://stackoverflow.com/a/2429320]
+[^5]: Linked List in Python, (BYU-I CSE)[https://byui-cse.github.io/cse212-course/lesson07/07-prepare.html#1.5]
