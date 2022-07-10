@@ -179,5 +179,3 @@ class LinkedList:
         return output
 
 
-linkedList = LinkedList()
-

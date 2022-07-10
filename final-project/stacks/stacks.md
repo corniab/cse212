@@ -123,12 +123,9 @@ while prompt != ".q":
 
 ## Practice Problem
 
+We will use two stacks to create a simple web browser[^6].
+
 ```python
-We will use two stacks to create a simple web browser.
-One stack will store the pages that have been previously visited.
-The second will store the pages that
-
-
 from stack import Stack
 
 class Web_Browser():
@@ -217,3 +214,4 @@ You can find the solution [here](solution.py).
 [^3]: Last In First Out, [Geeks for Geeks](https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming/)
 [^4]: The stack data structure — What is it and how is it used in JavaScript?, [Alice Matthews](https://levelup.gitconnected.com/the-stack-data-structure-what-is-it-and-how-is-it-used-in-javascript-23562fb8a590)
 [^5]: Stacks in Python, [BYU-I CSE 212 Course Notes](https://byui-cse.github.io/cse212-course/lesson03/03-prepare.html#1.4)
+[^6]: What are some good examples of using a stack data structure?, [https://cseducators.stackexchange.com/](https://cseducators.stackexchange.com/a/850)
