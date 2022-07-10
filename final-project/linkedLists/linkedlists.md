@@ -54,8 +54,8 @@ You can find the solution [here](solution.py).
 
 ### Footnotes
 
-[^1]: (Brainy Quote)[https://www.brainyquote.com/quotes/herbert_a_simon_193212]
-[^2]: How do you explain linked lists in layman's terms?, (Quora)[https://qr.ae/pvPxqO]
-[^3]: Linked List, (Wikipedia)[https://en.wikipedia.org/wiki/Linked_list]
-[^4]: Under what circumstances are linked lists useful?, (Stack OverFlow)[https://stackoverflow.com/a/2429320]
-[^5]: Linked List in Python, (BYU-I CSE)[https://byui-cse.github.io/cse212-course/lesson07/07-prepare.html#1.5]
+[^1]: Quote by Herbert A. Simon. One of the creators of linked lists, [Brainy Quote](https://www.brainyquote.com/quotes/herbert_a_simon_193212)
+[^2]: How do you explain linked lists in layman's terms?, [Quora](https://qr.ae/pvPxqO)
+[^3]: Linked List, [Wikipedia](https://en.wikipedia.org/wiki/Linked_list)
+[^4]: Under what circumstances are linked lists useful?, [Stack OverFlow](https://stackoverflow.com/a/2429320)
+[^5]: Linked List in Python, [BYU-I CSE](https://byui-cse.github.io/cse212-course/lesson07/07-prepare.html#1.5)
