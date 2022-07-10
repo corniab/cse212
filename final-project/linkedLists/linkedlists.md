@@ -34,8 +34,8 @@ Linked lists are dynamic, or flexible in nature. They allow for easy insertion a
 |     Operation      | Description                                        | Time Complexity |
 | :----------------: | :------------------------------------------------- | :-------------: |
 | insert_head(value) | Inserts value before the head.                     |      O(1)       |
-| insert_tail(value) | Inserts value before the head.                     |      O(1)       |
-|  insert(i, value)  | Inserts value after position i                     |      O(n)       |
+| insert_tail(value) | Inserts value before the tail.                     |      O(1)       |
+|  insert(i, value)  | Inserts value at position i                        |      O(n)       |
 |   remove_head()    | Removes the head                                   |      O(1)       |
 |   remove_tail()    | Removes the tail                                   |      O(1)       |
 |     remove(i)      | Removes node i                                     |      O(n)       |
