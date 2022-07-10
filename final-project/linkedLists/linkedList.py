@@ -4,6 +4,18 @@ class LinkedList:
         self.head = None
         self.tail = None
         self.__size = 0
+
+    @property
+    def size(self):
+        """A getter for returning the size of the linked list."""
+        return self.__size
+
+    @property
+    def empty(self):
+        """A property that checks if the linked list is empty."""
+        if self.__size > 0:
+            return False
+        return True
     
     class Node:
         def __init__(self, data) -> None:
