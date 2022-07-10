@@ -88,33 +88,49 @@ class Stack(list):
         return False
 ```
 
-We will create a small repl that allows the user to undo what they have typed.
+We will create a simple text editor that allows the user to undo what they have typed.
 
-`````python
-
-prompt = ""
+```python
+# Create an instance of the Stack
 stack = Stack()
-print("Welcome to the REPL")
-print("Type 'exit' to quit.")
-print("Type 'undo' to undo previous command.")
-while prompt != "exit":
-    prompt = input("Type a command: ")
-    if prompt == "undo":
+
+# Print instructions to the user
+print()
+print("+------------------------------------------+")
+print("|                                          |")
+print("|  This is a simple text editor!           |")
+print("|                                          |")
+print("|  Type '.q' to quit.                      |")
+print("|  Type '.u' to undo previous command.     |")
+print("|                                          |")
+print("|  Type anything to begin and press enter. |")
+print("|                                          |")
+print("+------------------------------------------+")
+print()
+
+# Prompt the user for input until they type exit
+prompt = ""
+while prompt != ".q":
+    prompt = input("> ")
+    if prompt == ".u":
         stack.pop()
-        print(stack)
+        print(" ".join(stack))
         continue
     stack.push(prompt)
-    print(stack)
+    print(" ".join(stack))
 
 ```
 
+## Practice Problem
+
+```python
 ## Practice Problem
 
 We will use two stacks to create a simple web browser.
 One stack will store the pages that have been previously visited.
 The second will store the pages that
 
-````python
+
 from stack import Stack
 
 class Web_Browser():
@@ -192,7 +208,7 @@ print("Visit a new page")
 browser.visit_page("reddit.com")
 browser.go_forward()
 
-`````
+```
 
 You can find the solution [here](solution.py).
 

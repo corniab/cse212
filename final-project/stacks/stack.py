@@ -46,18 +46,30 @@ class Stack(list):
             return True
         return False
 
-# We will create a small repl that allows the user to undo what they have typed
-prompt = ""
+# Create an instance of the Stack
 stack = Stack()
-print("Welcome to the REPL")
-print("Type 'exit' to quit.")
-print("Type 'undo' to undo previous command.")
-while prompt != "exit":
-    prompt = input("Type a command: ")
-    if prompt == "undo":
+
+# Print instructions to the user
+print()
+print("+------------------------------------------+")
+print("|                                          |")
+print("|  This is a simple text editor!           |")
+print("|                                          |")
+print("|  Type '.q' to quit.                    |")
+print("|  Type '.u' to undo previous command.   |")
+print("|                                          |")
+print("|  Type anything to begin and press enter. |")
+print("|                                          |")
+print("+------------------------------------------+")
+print()
+
+# Prompt the user for input until they type exit
+prompt = ""
+while prompt != ".q":
+    prompt = input("> ")
+    if prompt == ".u":
         stack.pop()
-        print(stack)
+        print(" ".join(stack))
         continue
     stack.push(prompt)
-    print(stack)
-
+    print(" ".join(stack))
