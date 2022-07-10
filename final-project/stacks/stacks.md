@@ -198,12 +198,6 @@ You can find the solution [here](solution.py).
 
 ### Footnotes
 
-[^1]: Photo by (Christopher Flaten)[https://www.pexels.com/photo/a-pile-of-gray-plates-5514789/]
+[^1]: Photo by [Christopher Flaten](https://www.pexels.com/photo/a-pile-of-gray-plates-5514789/)
 [^2]: Last In First Out, [Geeks for Geeks](https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming/)
-[^3]: Alice Matthews, [The stack data structure — What is it and how is it used in JavaScript?](https://levelup.gitconnected.com/the-stack-data-structure-what-is-it-and-how-is-it-used-in-javascript-23562fb8a590)
-[^4]: []()
-[^5]: []()
-
-```
-
-```
+[^3]: The stack data structure — What is it and how is it used in JavaScript?, [Alice Matthews](https://levelup.gitconnected.com/the-stack-data-structure-what-is-it-and-how-is-it-used-in-javascript-23562fb8a590)
