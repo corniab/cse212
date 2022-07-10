@@ -58,4 +58,4 @@ You can find the solution [here](solution.py).
 [^2]: How do you explain linked lists in layman's terms?, [Quora](https://qr.ae/pvPxqO)
 [^3]: Linked List, [Wikipedia](https://en.wikipedia.org/wiki/Linked_list)
 [^4]: Under what circumstances are linked lists useful?, [Stack OverFlow](https://stackoverflow.com/a/2429320)
-[^5]: Linked List in Python, [BYU-I CSE](https://byui-cse.github.io/cse212-course/lesson07/07-prepare.html#1.5)
+[^5]: Linked List in Python, [BYU-I CSE 212 Course Notes](https://byui-cse.github.io/cse212-course/lesson07/07-prepare.html#1.5)

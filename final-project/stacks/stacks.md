@@ -1,12 +1,12 @@
 # Stack
 
 > Software engineering is the establishment and use of sound engineering principles in order to obtain economically software that is reliable and works efficiently on real machines.
-> ― Friedrich L. Bauer
+> ― Friedrich L. Bauer[^1]
 
 A stack can be thought of as a stack of plates.
 
 You can only add or remove plates from the top of the stack.
-![stack of plates](../resources/plates.jpg)[^1]
+![stack of plates](../resources/plates.jpg)[^2]
 
 In this example, each plate could be thought of as a function call. When a function is invoked, it is placed on the "call stack". When the function finishes execution, then it is removed from the call stack.
 
@@ -14,7 +14,7 @@ In this example, each plate could be thought of as a function call. When a funct
 
 ## Usage
 
-A stack follows the principle of Last In First Out[^2]. This means that the most recent data (last in) is the first to be processed (first out). This makes it useful for several different processes[^3].
+A stack follows the principle of Last In First Out[^3]. This means that the most recent data (last in) is the first to be processed (first out). This makes it useful for several different processes[^4].
 
 - Call Stack (which we covered in the previous example)
 - Reversing
@@ -33,7 +33,7 @@ A stack follows the principle of Last In First Out[^2]. This means that the most
 
   ![maze backtracking](../resources/maze.jpg)
 
-## Time Complexity
+## Time Complexity[^5]
 
 Operations in stacks are very efficient because we are only adding and removing from the top of the stack.
 
@@ -214,6 +214,8 @@ You can find the solution [here](solution.py).
 
 ### Footnotes
 
-[^1]: Photo by [Christopher Flaten](https://www.pexels.com/photo/a-pile-of-gray-plates-5514789/)
-[^2]: Last In First Out, [Geeks for Geeks](https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming/)
-[^3]: The stack data structure — What is it and how is it used in JavaScript?, [Alice Matthews](https://levelup.gitconnected.com/the-stack-data-structure-what-is-it-and-how-is-it-used-in-javascript-23562fb8a590)
+[^1]: Quote by Friedrich L. Bauer. One of the inventors of Stacks, [AZ Quotes](https://www.azquotes.com/quote/1263359)
+[^2]: Photo by [Christopher Flaten](https://www.pexels.com/photo/a-pile-of-gray-plates-5514789/)
+[^3]: Last In First Out, [Geeks for Geeks](https://www.geeksforgeeks.org/lifo-last-in-first-out-approach-in-programming/)
+[^4]: The stack data structure — What is it and how is it used in JavaScript?, [Alice Matthews](https://levelup.gitconnected.com/the-stack-data-structure-what-is-it-and-how-is-it-used-in-javascript-23562fb8a590)
+[^5]: Stacks in Python, [BYU-I CSE 212 Course Notes](https://byui-cse.github.io/cse212-course/lesson03/03-prepare.html#1.4)
