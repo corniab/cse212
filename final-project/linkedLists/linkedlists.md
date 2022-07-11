@@ -235,6 +235,8 @@ We will use a linked list to implement a CD player.
 Use what you know about linked lists to solve the two
 problems below.
 
+You can find the solution [here](solution.py).
+
 ```python
 from linkedList import LinkedList
 
@@ -345,8 +347,6 @@ player.back() # Output: Skip to previous track.
 
 
 ```
-
-You can find the solution [here](solution.py).
 
 ### Footnotes
 
