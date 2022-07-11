@@ -23,6 +23,10 @@ class LinkedList:
             self.data = data
             self.next = None
             self.prev = None
+        
+        def __str__(self) -> str:
+            """Returns string representation of data."""
+            return self.data
     
     def insert_head(self, value):
         """Inserts a node before the head."""

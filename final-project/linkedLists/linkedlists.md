@@ -229,7 +229,118 @@ class LinkedList:
 
 ## Practice Problem
 
+We will use a linked list to implement a CD player.
+Use what you know about linked lists to solve the two
+problems below.
+
 ```python
+from linkedList import LinkedList
+
+"""
+Controls on a CD Player include Stop, Play, Skip, Back
+"""
+class CD:
+	def __init__(self) -> None:
+		"""Initializes an instance of CD."""
+		self.tracks = LinkedList()
+	##########################
+    #       PROBLEM 1        #
+	##########################
+	def add_song(self, title):
+		"""Adds a song to the CD."""
+        # Add code here to complete the function.
+
+	##########################
+    #    END OF PROBLEM 1    #
+	##########################
+
+class CD_Player:
+	def __init__(self, cd:CD) -> None:
+		"""Creates an instance of CD Player."""
+		self.first = cd.tracks.head
+		self.last = cd.tracks.tail
+		self.curr = cd.tracks.head
+
+	def play(self):
+		"""Plays current track."""
+		print(f"Play: '{self.curr}'")
+
+	def stop(self):
+		"""Stops current track."""
+		print(f"Stop: '{self.curr}'")
+
+	def skip(self):
+		"""Skips to next track."""
+		print()
+		print("Skip to next track.")
+
+		# If we reach end of tracks
+		# then set the current track to the first.
+		if self.curr.next is None:
+			self.curr = self.first
+		else:
+			self.curr = self.curr.next
+
+		# Play current track.
+		self.play()
+
+	def back(self):
+		"""Skips to the previous track."""
+
+	##########################
+    #       PROBLEM 2        #
+	##########################
+
+        # Add code here to complete the function.
+
+	##########################
+    #    END OF PROBLEM 2    #
+	##########################
+
+		# Play current track.
+		print()
+		print("Skip to previous track.")
+		self.play()
+
+# Create an instance of CD.
+cd = CD()
+
+# Add songs to CD.
+cd.add_song("Blinding Lights")
+cd.add_song("The Twist")
+cd.add_song("Smooth")
+cd.add_song("Mack The Knife")
+cd.add_song("Uptown Funk")
+cd.add_song("How Do I Live")
+cd.add_song("Party Rock Anthem")
+cd.add_song("I Gotta Feeling")
+cd.add_song("Macarena")
+cd.add_song("The Shape of You")
+
+# Create an instance of CD Player.
+player = CD_Player(cd)
+
+# Play first track.
+player.play() # Output: Play 'Blinding Lights'
+
+# Skip forward 3 tracks.
+player.skip() # Output: Skip to next track.
+			  # 		Play: 'The Twist'
+player.skip() # Output: Skip to next track.
+			  # 		Play: 'Smooth'
+player.skip() # Output: Skip to next track.
+			  # 		Play: 'Mack The Knife'
+
+# Skip back 4 tracks.
+player.back() # Output: Skip to previous track.
+			  # 		Play: 'Smooth'
+player.back() # Output: Skip to previous track.
+			  # 		Play: 'The Twist'
+player.back() # Output: Skip to previous track.
+			  # 		Play: 'Blinding Lights'
+player.back() # Output: Skip to previous track.
+			  # 		Play: 'The Shape of You'
+
 
 ```
 
