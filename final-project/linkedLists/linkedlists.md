@@ -273,8 +273,6 @@ class CD_Player:
 
 	def skip(self):
 		"""Skips to next track."""
-		print()
-		print("Skip to next track.")
 
 		# If we reach end of tracks
 		# then set the current track to the first.
@@ -284,6 +282,8 @@ class CD_Player:
 			self.curr = self.curr.next
 
 		# Play current track.
+		print()
+		print("Skip to next track.")
 		self.play()
 
 	def back(self):

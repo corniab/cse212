@@ -29,9 +29,6 @@ class CD_Player:
 	def skip(self):
 		"""Skips to next track."""
 
-		# Stop current track.
-		self.stop()
-
 		# If we reach end of tracks
 		# then set the current track to the first.
 		if self.curr.next is None:
@@ -40,6 +37,8 @@ class CD_Player:
 			self.curr = self.curr.next
 
 		# Play current track.
+		print()
+		print("Skip to next track.")
 		self.play()
 	
 	def back(self):
@@ -79,13 +78,19 @@ player = CD_Player(cd)
 player.play()
 
 # Skip forward 3 tracks.
-player.skip()
-player.skip()
-player.skip()
+player.skip() # Output: Skip to next track.
+			  # 		Play: 'The Twist'
+player.skip() # Output: Skip to next track.
+			  # 		Play: 'Smooth'
+player.skip() # Output: Skip to next track.
+			  # 		Play: 'Mack The Knife'
 
 # Skip back 4 tracks.
-player.back()
-player.back()
-player.back()
 player.back() # Output: Skip to previous track.
-			  # 		Play: 'The Shape of You.'
+			  # 		Play: 'Smooth'
+player.back() # Output: Skip to previous track.
+			  # 		Play: 'The Twist'
+player.back() # Output: Skip to previous track.
+			  # 		Play: 'Blinding Lights'
+player.back() # Output: Skip to previous track.
+			  # 		Play: 'The Shape of You'
