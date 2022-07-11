@@ -44,6 +44,8 @@ Linked lists are dynamic, or flexible in nature. They allow for easy insertion a
 
 ## Example
 
+Here is an example implementation of a linked list.
+
 ```python
 class LinkedList:
     def __init__(self) -> None:
