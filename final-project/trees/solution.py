@@ -1,10 +1,12 @@
+from pydoc import doc
+
+
 class Node:
-    def __init__(self, data, class_name="", id=""):
+    def __init__(self, data, id=""):
         """Creates an instance of a node."""
         self.data = data
         self.parent = None
         self.children = []
-        self.class_name = class_name
         self.id = id
 
     def append_child(self, node: "Node"):
@@ -29,7 +31,6 @@ class Node:
         str_val += f"\nParent:     {self.parent.data}"
         str_val += f"\nChildren:   {', '.join(child.data for child in self.children)}"
         str_val += f"\nId:         {self.id}"
-        str_val += f"\nClass Name: {self.class_name}"
 
         return str_val
 
@@ -42,23 +43,23 @@ class DocumentTree(Node):
         # Set the data of the root node to be 
         self.data = "DOCUMENT"
 
-    def create_element(self, data):
+    def create_element(self, data, id=""):
         """Create a new node."""
-        return Node(data)
+        return Node(data, id)
 
-    def get_element_by_class_name(self, selector_name): 
+    def get_element_by_id(self, id): 
         """
-        Gets first node with class selector name.
+        Gets first node with id.
         Performance: O(n).
         """
-        return self._get_element_by_class_name(selector_name, self)            
+        return self._get_element_by_id(id, self)            
 
-    def _get_element_by_class_name(self, selector_name, node: Node):
+    def _get_element_by_id(self, id, node: Node):
         """Searches for selector name."""
 
         # If the selector is present in the node's selectors
         # Then return the current node.
-        if selector_name == node.class_name:
+        if id == node.id:
             return node
         
         # Base Case: We have reached a leaf.
@@ -68,7 +69,7 @@ class DocumentTree(Node):
         # Continue searching tree.
         else:            
             for child in node.children:
-                result = self._get_element_by_class_name(selector_name, child)
+                result = self._get_element_by_id(id, child)
                 
                 # Return result if we found a matching node.
                 if result is not None: 
@@ -77,14 +78,34 @@ class DocumentTree(Node):
         # We did not find a matching node.
         return None
 
-    def get_element_by_id(self, id):
-        """
-        Gets element by id. 
-        Performance: O(n).
-        """
+    def remove_element_by_id(self, id):
+        """Removes first element with id."""
 
-    def _get_element_by_id(self, id, node: Node):
-        """Searches for element with id."""
+        return self._remove_element_by_id(id, self)
+
+    def _remove_element_by_id(self, id, node: Node, i=0):
+        """Removes an element and all child nodes by id."""
+        # If the selector is present in the node's selectors
+        # Then return the current node.
+        if id == node.id:
+            del node.parent.children[i]
+            return (node, i)
+        
+        # Base Case: We have reached a leaf.
+        if len(node.children) < 1:
+            return None
+
+        # Continue searching tree.
+        else:            
+            for i, child in enumerate(node.children):
+                result = self._remove_element_by_id(id, child, i)
+                
+                # Return result if we found a matching node.
+                if result is not None:
+                    return result
+
+        # We did not find a matching node.
+        return None
 
     def __str__(self) -> str:
         """Print a string representation of Document Tree"""
@@ -112,8 +133,12 @@ class DocumentTree(Node):
         # Return the final string from each subtree.
         return line
 
+
+
 # Create new instance of document tree.
 document = DocumentTree()
+
+document.id = "#document"
 
 # Create html element.
 html = document.create_element("HTML")
@@ -128,7 +153,7 @@ title = document.create_element("TITLE")
 body = document.create_element("BODY")
 
 # Create main element.
-main = document.create_element("MAIN")
+main = document.create_element("MAIN", "#main")
 
 # Create header element.
 header = document.create_element("HEADER")
@@ -149,7 +174,7 @@ main.append_child(header)
 main.append_child(section)
 main.append_child(footer)
 
-print(document)
+# print(document)
 """
 Output should look like the following:
 
@@ -163,3 +188,7 @@ DOCUMENT
                 |__SECTION
                 |__FOOTER
 """
+
+print(type(document.remove_element_by_id("#main")))
+
+print(document)

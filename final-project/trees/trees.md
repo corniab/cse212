@@ -125,10 +125,12 @@ class BST:
             yield from self._traverse_backward(node.right)
             yield node.data
             yield from self._traverse_backward(node.left)
-
 ```
 
 ## Practice Problem
+
+For our practice problem, we will use a generic tree that uses arrays to store its child nodes.
+This will increase the time complexity of insertion and removal to O(n).
 
 ```python
 
