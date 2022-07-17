@@ -1,6 +1,3 @@
-from pydoc import doc
-
-
 class Node:
     def __init__(self, data, id=""):
         """Creates an instance of a node."""
@@ -174,7 +171,7 @@ main.append_child(header)
 main.append_child(section)
 main.append_child(footer)
 
-# print(document)
+print(document)
 """
 Output should look like the following:
 
@@ -192,3 +189,12 @@ DOCUMENT
 print(type(document.remove_element_by_id("#main")))
 
 print(document)
+"""
+Output should look like the following:
+
+DOCUMENT
+    |__HTML
+        |__HEAD     
+            |__TITLE
+        |__BODY
+"""
