@@ -2,7 +2,8 @@
 
 > "If debugging is the process of removing software bugs, then programming must be the process of putting them in."
 > ― Edsger Dijkstra[^1]
-> Welcome!
+
+Welcome!
 
 In this tutorial, I will cover three data structures: Stacks[^2], Linked Lists[^3], and Trees[^4]. For each data structure, I will discuss when it is used, its time complexity and show an example of how to use it. Each module will also include a problem to practice your newly learned skills!
 
