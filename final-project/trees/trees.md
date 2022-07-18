@@ -1,4 +1,6 @@
-# Tree
+[Home](/final-project/welcome.md)
+
+# Trees
 
 > “Computers are good at following instructions, but not at reading your mind.”
 > ― Donald Knuth[^1]

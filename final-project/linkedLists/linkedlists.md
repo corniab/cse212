@@ -1,3 +1,5 @@
+[Home](/final-project/welcome.md)
+
 # Linked List
 
 > "There are no morals about technology at all. Technology expands our ways of thinking about things, expands our ways of doing things. If we're bad people we use technology for bad purposes and if we're good people we use it for good purposes."
