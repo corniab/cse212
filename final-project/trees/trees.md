@@ -9,8 +9,20 @@ Lets take a moment imagine a family tree. At the top of our tree are the primary
 
 ![family tree](../resources/family-tree.jpg)
 
-Trees, in computer science, are a data structure made up of nodes connected in a hierarchical tree like fashion.[^2] There is a single "root" node. Each node may have 0 or more "child" nodes. Binary Search Trees are a specialized type of tree that allows each node to have 0 to two "child" nodes.
+Trees, in computer science, are a data structure made up of nodes connected in a hierarchical tree like fashion.[^2] There is a single "root" node. Each node may have 0 or more "child" nodes. Binary Search Trees (BST) are a specialized type of tree that allows each node to have 0 to two "child" nodes.
 ![tree data structure](../resources/tree.jpg)
+
+Here is how a simple BST would look.
+![bst](../resources/bst.jpg)
+
+Here is how an insertion would work. We compare each node to the insertion value starting from left to right, recursing down the tree until we reach a leaf.
+![bst insertion](../resources/bst-insertion.jpg)
+
+Here is how an deletion would work. Again we recurse through the tree from right to left until we reach the node to delete. If the node has children then we need to rotate the nodes so that they are balanced and reconnect the subtree.
+![bst deletion](../resources/bst-deletion.jpg)
+
+Self balancing BST's[^5] such as a red-black tree or AVL tree rotate nodes on insertion and deletion to maintain the balance of the tree. Otherwise we would just end up with a linked list.
+![bst linked](../resources/bst-linked.jpg)
 
 Trees are commonly used data structures for when we have hierarchical data. They are also good at insertion and searching for data.[^3] As you can imagine this can be useful several types of application.
 
@@ -33,7 +45,7 @@ Trees are commonly used data structures for when we have hierarchical data. They
 
 ## Example
 
-Here is an example of a binary tree.
+Here is an example of a binary search tree.
 
 ```python
 class BST:
@@ -131,8 +143,9 @@ class BST:
 
 ## Practice Problem
 
-For our practice problem, we will use a generic tree that uses arrays to store its child nodes.
+For our practice problem, we will use a generic tree[^6] that uses arrays to store its child nodes.
 This will increase the time complexity of insertion and removal to O(n).
+![m-ary tree](../resources/n-ary.jpg)
 
 ```python
 class Node:
@@ -338,4 +351,5 @@ You can find the solution [here](solution.py).
 [^2]: Tree Data Structure, [Wikipedia](<https://en.wikipedia.org/wiki/Tree_(data_structure)>)
 [^3]: Introduction To Binary Trees, [Study Tonight](https://www.studytonight.com/data-structures/introduction-to-binary-trees)
 [^4]: Trees, [BYU-I CSE 212 Course Notes](https://byui-cse.github.io/cse212-course/lesson09/09-prepare.html)
-[^5]: []()
+[^5]: Self-balancing binary search tree, [Wikipedia](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree)
+[^6]: m-ary tree, [Wikipedia](https://en.wikipedia.org/wiki/M-ary_tree)

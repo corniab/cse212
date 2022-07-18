@@ -186,8 +186,7 @@ DOCUMENT
                 |__FOOTER
 """
 
-print(type(document.remove_element_by_id("#main")))
-
+print(document.remove_element_by_id("#main"))
 print(document)
 """
 Output should look like the following:
